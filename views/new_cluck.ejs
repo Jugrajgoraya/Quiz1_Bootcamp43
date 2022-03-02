@@ -1,0 +1,16 @@
+<%- include('partials/header.ejs') %>
+<form action="/new" method="POST" class="m-3 border">
+    <div class="m-3">
+        <label for="content" class="form-label">Content</label>
+        <textarea class="form-control" name="content" id="content" rows="3" placeholder="your thoughts..."></textarea>
+    </div> 
+    <div class="m-3">
+        <label for="imageUrl" class="form-label">Image Url</label>
+        <input type="text" name="imageUrl" class="form-control" id="imageUrl" placeholder="e.g. http//www.example.com">
+    </div>
+    <div class="d-grid justify-content-md-end" >
+        <input type="submit" class="btn btn-outline-secondary m-3" value="      Cluck!     ">
+    </div>        
+</form>
+<%- include('partials/footer.ejs')  %> 
+
