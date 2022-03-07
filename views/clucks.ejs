@@ -1,14 +1,15 @@
+
 <%- include('partials/header.ejs')  %> 
     <div>
         <% for ( cluck of clucks ) {%> 
-        <div class="card mt-4 mb-4 row">
+        <div class="border mt-4 mb-4 p-2 row">
             <div class="col">
-                <img class="rounded" src="images/avtar.png" alt="avtar" style ="height: 2.5rem; width:4.5rem;">
+                <img class="rounded" src="images/avtar.png" alt="avtar" style ="height: 3.5rem; width:5.5rem;">
             </div>
-            <div class="col">
+            <div class="col-11">
                 <div>
                     <h5> <%- cluck.username  %></h5>
-                    <p> <%-cluck.created_at  %></p>
+                    <p> <%- cluck.created_at %></p>
                 </div>
                 <div>
                     <p><%- cluck.content  %></p>

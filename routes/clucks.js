@@ -1,11 +1,20 @@
 const express = require('express')
 const router  = express.Router();
 const knex = require('../db/client')
+const TimeAgo = require('javascript-time-ago')
+const en = require('javascript-time-ago/locale/en.json')
+TimeAgo.addDefaultLocale(en)
+const timeAgo = new TimeAgo('en-US') 
 
 router.get('/', (req, res) => {
     knex('clucks')
     .orderBy('created_at', 'desc')
     .then(clucks => {
+        for (cluck of clucks) {
+            let seconds  = new Date() - cluck.created_at
+            let time = timeAgo.format(Date.now() - seconds)
+            cluck.created_at = time
+        }
         res.render('clucks', {clucks: clucks})
     })
 });
