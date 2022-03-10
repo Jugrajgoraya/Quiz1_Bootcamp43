@@ -1,0 +1,25 @@
+
+<%- include('partials/header.ejs')  %> 
+    <div>
+        <% for ( cluck of clucks ) {%> 
+        <div class="border mt-4 mb-4 p-2 row">
+            <div class="col">
+                <img class="rounded" src="images/avtar.png" alt="avtar" style ="height: 3.5rem; width:5.5rem;">
+            </div>
+            <div class="col-11">
+                <div>
+                    <h5> <%- cluck.username  %></h5>
+                    <p> <%- cluck.created_at %></p>
+                </div>
+                <div>
+                    <p><%- cluck.content  %></p>
+                    <% if (cluck.imageUrl){%> 
+                    <img class="" src="<%- cluck.imageUrl  %>" alt="logo" style ="height: 8.5rem; width:8.5rem;">
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <% } %> 
+    </div>
+    
+    <%- include('partials/footer.ejs')  %>   

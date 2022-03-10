@@ -1,0 +1,12 @@
+<%- include('partials/header.ejs') %>
+    <h1>sign in page</h1>
+    <form class="m-3 border border-secondary rounded" action="/sign_in" method="POST">
+        <div class="m-3">
+            <label class="form-label mb-3" for="username"> Your name</label>
+            <input type="text" class="form-control border-secondary pr-9" name="username" id="username" placeholder=" User name" aria-label="First name">
+        </div>
+        <div class="d-grid justify-content-md-end" >
+            <input type="submit" class="btn btn-light border border-secondary m-3 " value="    Sign In    ">
+        </div>    
+    </form>
+<%- include('partials/footer.ejs')  %> 
